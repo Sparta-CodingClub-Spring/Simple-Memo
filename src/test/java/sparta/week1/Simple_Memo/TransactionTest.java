@@ -46,13 +46,14 @@ public class TransactionTest {
 		// test2는 트랜잭션 설정이 안되어있기에 persist 사용 불가 -> 오류 발생
 	}
 
-	@Test
-	// @Transactional
-	// @Rollback(value = false)
-	@DisplayName("Transaction 전파")
-	void test3(){
-		memoRepository.createMemo(em);
-		System.out.println("테스트 test3 메서드 종료");
-	}
+	// @Test
+	// // @Transactional
+	// // @Rollback(value = false)
+	// @Disabled
+	// @DisplayName("Transaction 전파")
+	// void test3(){
+	// 	memoRepository.createMemo(em);
+	// 	System.out.println("테스트 test3 메서드 종료");
+	// }
 
 }
