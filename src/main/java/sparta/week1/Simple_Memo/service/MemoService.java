@@ -33,6 +33,11 @@ public class MemoService {
 		return memoRepository.findAllByOrderByModifiedAtDesc().stream().map(MemoResponseDto::new).toList();
 	}
 
+	public List<MemoResponseDto> getMemosByKeyword(String keyword) {
+		return memoRepository.findAllByContentsContainingOrderByModifiedAtDesc(keyword)
+			.stream().map(MemoResponseDto::new).toList();
+	}
+
 	// update의 경우, Dirty Checking 작동을 위해 트랜잭션 설정 필수
 	@Transactional
 	public Long updateMemo(Long id, MemoRequestDto requestDto){

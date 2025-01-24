@@ -10,4 +10,6 @@ import sparta.week1.Simple_Memo.entity.Memo;
 @Repository
 public interface MemoRepository extends JpaRepository<Memo, Long> {
 	List<Memo> findAllByOrderByModifiedAtDesc();
+
+	List<Memo> findAllByContentsContainingOrderByModifiedAtDesc(String keyword);
 }

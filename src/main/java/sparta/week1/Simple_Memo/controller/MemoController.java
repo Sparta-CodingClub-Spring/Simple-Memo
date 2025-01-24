@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import sparta.week1.Simple_Memo.dto.MemoRequestDto;
@@ -38,6 +39,11 @@ public class MemoController {
 	public List<MemoResponseDto> getMemos(){
 
 		return memoService.getMemos();
+	}
+
+	@GetMapping("/memos/contents")
+	public List<MemoResponseDto> getMemosByKeyword(@RequestParam String keyword){
+		return memoService.getMemosByKeyword(keyword);
 	}
 
 	@PutMapping("/memos/{id}")
