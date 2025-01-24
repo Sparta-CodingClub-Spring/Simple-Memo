@@ -30,7 +30,7 @@ public class MemoService {
 	}
 
 	public List<MemoResponseDto> getMemos() {
-		return memoRepository.findAll().stream().map(MemoResponseDto::new).toList();
+		return memoRepository.findAllByOrderByModifiedAtDesc().stream().map(MemoResponseDto::new).toList();
 	}
 
 	// update의 경우, Dirty Checking 작동을 위해 트랜잭션 설정 필수
