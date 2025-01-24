@@ -18,7 +18,7 @@ import sparta.week1.Simple_Memo.dto.MemoRequestDto;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Memo {
+public class Memo extends Timestamped{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Auto Increment 사용
 	private Long id;

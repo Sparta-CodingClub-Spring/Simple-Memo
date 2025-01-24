@@ -1,5 +1,7 @@
 package sparta.week1.Simple_Memo.dto;
 
+import java.time.LocalDateTime;
+
 import lombok.Getter;
 import sparta.week1.Simple_Memo.entity.Memo;
 
@@ -9,11 +11,15 @@ public class MemoResponseDto {
 	Long id;
 	String username;
 	String contents;
+	LocalDateTime createdAt;
+	LocalDateTime modifiedAt;
 
 	public MemoResponseDto(Memo memo) {
 		this.id = memo.getId();
 		this.username = memo.getUsername();
 		this.contents = memo.getContents();
+		this.createdAt = memo.getCreatedAt();
+		this.modifiedAt = memo.getModifiedAt();
 	}
 }
 
